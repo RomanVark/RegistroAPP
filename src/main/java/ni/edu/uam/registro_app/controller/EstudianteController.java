@@ -1,10 +1,7 @@
 package ni.edu.uam.registro_app.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import ni.edu.uam.registro_app.dao.EstudianteDao;
 import ni.edu.uam.registro_app.modelos.Estudiante;
 
@@ -24,6 +21,12 @@ public class EstudianteController {
     private CheckBox chktieneBeca;
     @FXML
     private Label lblRegistro;
+    @FXML
+    private ComboBox<String> combGenero;
+    @FXML
+    public void initialize() {
+        combGenero.getItems().addAll("Masculino", "Femenino", "Otro");
+    }
 
     @FXML
     protected void guardarOnClick(){
@@ -37,7 +40,8 @@ public class EstudianteController {
         String carrera = txtCarrera.getText();
         LocalDate fechaNa = dpfechaNac.getValue();
         Boolean beca = chktieneBeca.isSelected();
-        agregarDatos(new Estudiante(nomre,apellido,carrera,fechaNa,beca));
+        String genero = combGenero.getValue();
+        agregarDatos(new Estudiante(nomre,apellido,carrera,fechaNa,beca, genero));
     }
     private void agregarDatos(Estudiante estudiante){
 

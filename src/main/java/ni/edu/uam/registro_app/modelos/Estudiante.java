@@ -19,6 +19,7 @@ public class Estudiante {
     private String carrera;
     private LocalDate fechaNacimiento;
     private Boolean tienBeca;
+    private String genero;
 
 
 }
