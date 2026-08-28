@@ -7,7 +7,7 @@
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="322.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.registro_app.controller.EstudianteController">
    <children>
       <Label text="Nombres" />
-      <TextField fx:id="txtNombre" promptText="Juan Roman" />
+      <TextField fx:id="txtNombres" promptText="Juan Roman" />
       <Label text="Apellidos" />
       <TextField fx:id="txtApellidos" promptText="Romero Mejia" />
       <Label text="Carrera" />

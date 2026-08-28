@@ -10,7 +10,7 @@ public class EstudianteDao implements Crud<Estudiante> {
 
      List<Estudiante> estudiantes;
 
-     public void EstudianteDao(){
+     public EstudianteDao(){
          estudiantes=new ArrayList<>();
      }
     @Override
@@ -21,6 +21,7 @@ public class EstudianteDao implements Crud<Estudiante> {
 
     @Override
     public List<Estudiante> obternerRegistros() {
-        return estudiantes;
+
+         return estudiantes;
     }
 }
