@@ -1,7 +1,10 @@
 package ni.edu.uam.registro_app.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import ni.edu.uam.registro_app.dao.EstudianteDao;
 import ni.edu.uam.registro_app.modelos.Estudiante;
 
@@ -25,6 +28,19 @@ public class EstudianteController {
     private ComboBox<String> combGenero;
     @FXML
     private ComboBox<String> combFacultad;
+    @FXML
+    private TableView<Estudiante> tbtablaRegistros;
+    @FXML
+    private TableColumn<Estudiante, String> colNombres;
+    @FXML
+    private TableColumn<Estudiante, String> colApellidos;
+    @FXML
+    private TableColumn<Estudiante, String> colCarrera;
+    @FXML
+    private TableColumn<Estudiante, String> colFacultad;
+
+
+
 
     public void initialize() {
 
@@ -36,6 +52,19 @@ public class EstudianteController {
                 "Facultad de Ingeniería y Arquitectura",
                 "Facultad de Ciencias Jurídicas, Humanidades y Relaciones Internacionales",
                 "Language Center");
+
+        colNombres.setCellValueFactory(new PropertyValueFactory<>("nombres"));
+        colApellidos.setCellValueFactory(new PropertyValueFactory<>("apellidos"));
+        colCarrera.setCellValueFactory(new PropertyValueFactory<>("carrera"));
+        colFacultad.setCellValueFactory(new PropertyValueFactory<>("facultad"));
+    }
+
+    private void cargarTabla(){
+        ObservableList<Estudiante> datos = FXCollections.observableArrayList(
+                listado.obternerRegistros()
+        );
+
+        tbtablaRegistros.setItems(datos);
     }
 
 
@@ -58,6 +87,7 @@ public class EstudianteController {
     private void agregarDatos(Estudiante estudiante){
 
         listado.agregar(estudiante);
+        cargarTabla();
         lblRegistro.setText("Registros Guardados: " + listado.obternerRegistros().size());
 
     }

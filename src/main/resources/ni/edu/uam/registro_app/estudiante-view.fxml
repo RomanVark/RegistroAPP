@@ -69,10 +69,10 @@
       <Label fx:id="lblRegistrosGuardados" text="Registros guardados." />
       <TableView fx:id="tbvtablaRegistros" prefHeight="105.0" prefWidth="395.0">
         <columns>
-          <TableColumn fx:id="colmNombres" prefWidth="95.0" resizable="false" text="Nombres" />
-          <TableColumn fx:id="colmApellidos" prefWidth="95.0" resizable="false" text="Apellidos" />
-            <TableColumn fx:id="colmCarrera" prefWidth="95.0" resizable="false" text="Carrera" />
-            <TableColumn fx:id="colmFacultad" prefWidth="95.0" resizable="false" text="Facultad" />
+          <TableColumn fx:id="colNombres" prefWidth="95.0" resizable="false" text="Nombres" />
+          <TableColumn fx:id="colApellidos" prefWidth="95.0" resizable="false" text="Apellidos" />
+            <TableColumn fx:id="colCarrera" prefWidth="95.0" resizable="false" text="Carrera" />
+            <TableColumn fx:id="colFacultad" prefWidth="95.0" resizable="false" text="Facultad" />
         </columns>
          <VBox.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
