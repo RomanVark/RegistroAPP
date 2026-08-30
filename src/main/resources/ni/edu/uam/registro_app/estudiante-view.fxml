@@ -48,7 +48,7 @@
          <VBox.margin>
             <Insets top="5.0" />
          </VBox.margin></TextField>
-      <Label fx:id="lblFacultad" layoutX="196.0" layoutY="218.0" text="Seleccione su facultad.">
+      <Label fx:id="lblFacultad" layoutX="196.0" layoutY="218.0" text="Facultad">
          <VBox.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </VBox.margin>

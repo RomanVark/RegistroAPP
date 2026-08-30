@@ -20,6 +20,7 @@ public class Estudiante {
     private LocalDate fechaNacimiento;
     private Boolean tienBeca;
     private String genero;
+    private String facultad;
 
 
 }

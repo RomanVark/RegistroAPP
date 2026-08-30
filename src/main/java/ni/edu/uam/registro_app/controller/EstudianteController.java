@@ -23,9 +23,15 @@ public class EstudianteController {
     private Label lblRegistro;
     @FXML
     private ComboBox<String> combGenero;
-    @FXML
     public void initialize() {
         combGenero.getItems().addAll("Masculino", "Femenino", "Otro");
+    }
+    @FXML
+    private ComboBox<String> combFacultad;
+    public void () { combFacultad.getItems().addAll("UAM College", "Facultad de Odontología", "Facultad de Ciencias Médicas",
+                "Facultad de Marketing, Diseño y Ciencias de la Comunicación", "Facultad de Ciencias Administrativas y Económicas",
+                "Facultad de Ingeniería y Arquitectura", "Facultad de Ciencias Jurídicas, Humanidades y Relaciones Internacionales",
+                "Language Center");
     }
 
     @FXML
@@ -41,7 +47,8 @@ public class EstudianteController {
         LocalDate fechaNa = dpfechaNac.getValue();
         Boolean beca = chktieneBeca.isSelected();
         String genero = combGenero.getValue();
-        agregarDatos(new Estudiante(nomre,apellido,carrera,fechaNa,beca, genero));
+        String facultad = combFacultad.getValue();
+        agregarDatos(new Estudiante(nomre,apellido,carrera,fechaNa,beca, genero, facultad));
     }
     private void agregarDatos(Estudiante estudiante){
 
