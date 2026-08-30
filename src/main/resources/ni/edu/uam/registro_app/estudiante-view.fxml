@@ -53,7 +53,7 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </VBox.margin>
       </Label>
-      <ComboBox fx:id="combFacultad" layoutX="140.0" layoutY="188.0" prefWidth="150.0">
+      <ComboBox fx:id="combFacultad" layoutX="140.0" layoutY="188.0" prefHeight="25.0" prefWidth="390.0">
          <VBox.margin>
             <Insets />
          </VBox.margin>
