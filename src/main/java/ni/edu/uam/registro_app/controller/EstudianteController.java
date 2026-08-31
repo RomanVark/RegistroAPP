@@ -31,13 +31,18 @@ public class EstudianteController {
     @FXML
     private TableView<Estudiante> tbtablaRegistros;
     @FXML
-    private TableColumn<Estudiante, String> colNombres;
+    private TableColumn<Estudiante, String> colNombre;
     @FXML
-    private TableColumn<Estudiante, String> colApellidos;
+    private TableColumn<Estudiante, String> colApellido;
     @FXML
     private TableColumn<Estudiante, String> colCarrera;
     @FXML
     private TableColumn<Estudiante, String> colFacultad;
+
+    public void cargarTabla() {
+        ObservableList<Estudiante> estudiantes = FXCollections.observableArrayList(listado.obternerRegistros());
+        tbtablaRegistros.setItems(estudiantes);
+    }
 
 
 
@@ -53,20 +58,11 @@ public class EstudianteController {
                 "Facultad de Ciencias Jurídicas, Humanidades y Relaciones Internacionales",
                 "Language Center");
 
-        colNombres.setCellValueFactory(new PropertyValueFactory<>("nombres"));
-        colApellidos.setCellValueFactory(new PropertyValueFactory<>("apellidos"));
+        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        colApellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
         colCarrera.setCellValueFactory(new PropertyValueFactory<>("carrera"));
         colFacultad.setCellValueFactory(new PropertyValueFactory<>("facultad"));
     }
-
-    private void cargarTabla(){
-        ObservableList<Estudiante> datos = FXCollections.observableArrayList(
-                listado.obternerRegistros()
-        );
-
-        tbtablaRegistros.setItems(datos);
-    }
-
 
     @FXML
     protected void guardarOnClick(){
@@ -75,22 +71,20 @@ public class EstudianteController {
     }
 
     private void  leerDatos(){
-        String nomre = txtNombres.getText();
+        String nombre = txtNombres.getText();
         String apellido = txtApellidos.getText();
         String carrera = txtCarrera.getText();
         LocalDate fechaNa = dpfechaNac.getValue();
         Boolean beca = chktieneBeca.isSelected();
         String genero = combGenero.getValue();
         String facultad = combFacultad.getValue();
-        agregarDatos(new Estudiante(nomre,apellido,carrera,fechaNa,beca, genero, facultad));
+        agregarDatos(new Estudiante(nombre,apellido,carrera,fechaNa,beca, genero, facultad));
     }
-    private void agregarDatos(Estudiante estudiante){
+
+    private void agregarDatos(Estudiante estudiante) {
 
         listado.agregar(estudiante);
-        cargarTabla();
         lblRegistro.setText("Registros Guardados: " + listado.obternerRegistros().size());
-
+        cargarTabla();
     }
-
-
 }
