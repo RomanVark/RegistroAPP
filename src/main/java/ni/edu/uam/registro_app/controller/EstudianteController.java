@@ -5,6 +5,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import ni.edu.uam.registro_app.dao.EstudianteDao;
 import ni.edu.uam.registro_app.modelos.Estudiante;
 
@@ -24,6 +26,8 @@ public class EstudianteController {
     private CheckBox chktieneBeca;
     @FXML
     private Label lblRegistro;
+    @FXML
+    private ImageView imgLogoUam;
     @FXML
     private ComboBox<String> combGenero;
     @FXML
@@ -62,6 +66,9 @@ public class EstudianteController {
         colApellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
         colCarrera.setCellValueFactory(new PropertyValueFactory<>("carrera"));
         colFacultad.setCellValueFactory(new PropertyValueFactory<>("facultad"));
+
+        Image imagen = new Image(getClass().getResourceAsStream("/ni/edu/uam/registro_app/images/LogoUAM.png"));
+        imgLogoUam.setImage(imagen);
     }
 
     @FXML
