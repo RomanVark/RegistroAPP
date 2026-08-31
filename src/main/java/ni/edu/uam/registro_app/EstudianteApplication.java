@@ -8,9 +8,9 @@ import javafx.stage.Stage;
 public class EstudianteApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("estudiante-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(EstudianteApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Registro App!");
+        stage.setTitle("Inicio de sesión");
         stage.setScene(scene);
         stage.show();
 
